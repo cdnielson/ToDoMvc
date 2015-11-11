@@ -1,0 +1,39 @@
+﻿@model ToDoMvc.Models.ToDo
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Delete</title>
+</head>
+<body>
+    <h3>Are you sure you want to delete this?</h3>
+    <fieldset>
+        <legend>Book</legend>
+
+        <div class="display-label">BookName</div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Item)
+        </div>
+
+        <div class="display-label">AuthorName</div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Completed)
+        </div>
+
+
+    </fieldset>
+    @using (Html.BeginForm())
+    {
+        <p>
+            <input type="submit" value="Delete" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </p>
+    }
+
+</body>
+</html>
