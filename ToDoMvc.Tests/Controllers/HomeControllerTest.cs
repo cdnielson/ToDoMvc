@@ -14,6 +14,7 @@ namespace ToDoMvc.Tests.Controllers
     [TestClass]
     public class HomeControllerTest
     {
+        //instantiate test items
         ToDo todo1 = null;
         ToDo todo2 = null;
         ToDo todo3 = null;
@@ -25,12 +26,14 @@ namespace ToDoMvc.Tests.Controllers
 
         public HomeControllerTest()
         {
+            //create test items
             todo1 = new ToDo {Id = 1, Item = "Item 1", Completed = true};
             todo2 = new ToDo {Id = 2, Item = "Item 2", Completed = false};
             todo3 = new ToDo {Id = 3, Item = "Item 3", Completed = true};
             todo4 = new ToDo {Id = 4, Item = "Item 4", Completed = false};
             todo5 = new ToDo {Id = 5, Item = "Item 5", Completed = true};
 
+            //put test items into a List
             todos = new List<ToDo>
             {
                 todo1,
@@ -40,8 +43,10 @@ namespace ToDoMvc.Tests.Controllers
                 todo5
             };
 
+            //dump list of todos into a dummy repository
             toDoRepository = new DummyToDoRepository(todos);
 
+            //instatiate controller with dummy repository
             controller = new HomeController(toDoRepository);
         }
 

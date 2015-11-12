@@ -19,24 +19,31 @@
     {
         @Html.ValidationSummary(true)
         <fieldset>
-            <legend>Book</legend>
-
-            <div class="editor-label">
-                @Html.LabelFor(model => model.Item)
-            </div>
-            <div class="editor-field">
-                @Html.EditorFor(model => model.Item)
-                @Html.ValidationMessageFor(model => model.Item)
-            </div>
-
-            <div class="editor-label">
-                @Html.LabelFor(model => model.Completed)
-            </div>
-            <div class="editor-field">
-                @Html.EditorFor(model => model.Completed)
-                @Html.ValidationMessageFor(model => model.Completed)
-            </div>
-
+            <legend>Add To Do</legend>
+            <table class="table-condensed table-striped">
+                <thead>
+                    <tr>
+                        <th class="editor-label">
+                            @Html.LabelFor(model => model.Item)
+                        </th>
+                        <th class="editor-label">
+                            @Html.LabelFor(model => model.Completed)
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="editor-field">
+                            @Html.EditorFor(model => model.Item)
+                            @Html.ValidationMessageFor(model => model.Item)
+                        </td>
+                        <td class="editor-field">
+                            @Html.EditorFor(model => model.Completed)
+                            @Html.ValidationMessageFor(model => model.Completed)
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
             <p>
                 <input type="submit" value="Create" />
             </p>

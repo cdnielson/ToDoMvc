@@ -13,18 +13,26 @@
 <body>
     <h3>Are you sure you want to delete this?</h3>
     <fieldset>
-        <legend>Book</legend>
+        <legend>To Do Item</legend>
+        <table class="table-condensed table-striped">
+            <thead>
+                <tr>
+                    <th class="display-label" style="padding-right: 30px;">Item</th>
+                    <th class="display-label">Completed</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="display-field"  style="padding-right: 30px;">
+                        @Html.DisplayFor(model => model.Item)
+                    </td>
+                    <td class="display-field">
+                        @Html.DisplayFor(model => model.Completed)
+                    </td>
+                </tr>
 
-        <div class="display-label">BookName</div>
-        <div class="display-field">
-            @Html.DisplayFor(model => model.Item)
-        </div>
-
-        <div class="display-label">AuthorName</div>
-        <div class="display-field">
-            @Html.DisplayFor(model => model.Completed)
-        </div>
-
+            </tbody>
+        </table>
 
     </fieldset>
     @using (Html.BeginForm())
