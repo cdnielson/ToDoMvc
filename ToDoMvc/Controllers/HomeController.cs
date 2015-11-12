@@ -41,7 +41,7 @@ namespace ToDoMvc.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create(ToDo todo)
+        public ActionResult Create([Bind(Include = "ID,Item,Completed")] ToDo todo)
         {
             if (ModelState.IsValid)
             {
